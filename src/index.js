@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AdaptivityProvider, ConfigProvider } from "@vkontakte/vkui"
+import "@vkontakte/vkui/dist/vkui.css";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<ConfigProvider>
+			<AdaptivityProvider>
+				<App />
+			</AdaptivityProvider>
+		</ConfigProvider>
+	</React.StrictMode>,
+	document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
